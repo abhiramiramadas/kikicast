@@ -29,3 +29,5 @@ node_modules/
 *.psd
 *.xcf
 *.ai
+
+electron.exe
