@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather Widget</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Pixelify Sans', sans-serif;
+    }
+
+    /* Frame 1 */
+    .frame1 {
+      position: absolute;
+      width: 400px;
+      height: 459px;
+      left: 25px;
+      top: 24px;
+      background: #FFFFFF;
+      border-radius: 20px;
+    }
+
+    /* Frame 2 - Header */
+    .header {
+      position: absolute;
+      width: 400px;
+      height: 52px;
+      left: 0px;
+      top: 0px;
+      background: #D5BFE9;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      -webkit-app-region: drag;
+    }
+
+    .header h1 {
+      position: absolute;
+      left: 16px;
+      top: 0px;
+      font-family: 'Pixelify Sans', sans-serif;
+      font-weight: 400;
+      font-size: 39px;
+      line-height: 47px;
+      color: #9877A5;
+      margin: 0;
+    }
+
+    .unit {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      top: 6px;
+      border: 1px solid #9877A5;
+      box-sizing: border-box;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 35px;
+      font-size: 21px;
+      font-family: 'Pixelify Sans', sans-serif;
+      -webkit-app-region: no-drag;
+      cursor: pointer;
+    }
+
+    .unit.c {
+      background: #FFFFFF;
+      left: 349px;
+    }
+
+    .unit.f {
+      background: #FFF5F5;
+      left: 300px;
+    }
+
+    .unit span {
+      display: block;
+      line-height: 35px;
+      color: #000000;
+    }
+
+    /* Frame 3 */
+    .frame3 {
+      position: absolute;
+      width: 400px;
+      height: 407px;
+      left: 0px;
+      top: 52px;
+      background: url('assets/dark.png');
+      border: 1px solid #9877A5;
+      border-radius: 0px 0px 20px 20px;
+      overflow: hidden;
+    }
+
+    /* Stars */
+    .star {
+      position: absolute;
+      background: url('assets/star.png');
+      background-size: cover;
+    }
+
+    .star2 { width: 41px; height: 41px; left: 16px; top: 111px; }
+    .star3 { width: 37px; height: 37px; left: 138px; top: 34px; }
+    .star4 { width: 37px; height: 37px; left: 373px; top: 164px; }
+    .star5 { width: 37px; height: 37px; left: 347px; top: 236px; }
+
+    /* Big Star */
+    .big-star {
+      position: absolute;
+      width: 135px;
+      height: 141px;
+      left: 231px;
+      top: 74px;
+      background: url('assets/bigstar.png');
+      background-size: cover;
+    }
+
+    /* Temperature */
+    .temp {
+      position: absolute;
+      width: 62px;
+      height: 41px;
+      left: 272px;
+      top: 131px;
+      font-family: 'Pixelify Sans', sans-serif;
+      font-weight: 400;
+      font-size: 38px;
+      line-height: 46px;
+      color: #000000;
+    }
+
+.kiki-wrapper {
+  position: absolute;
+  top: 152px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.kiki {
+  width: 210px;
+  height: 206px;
+}
+
+    /* Babystars & Rectangle */
+
+    .babystar {
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      background: url('assets/babystar.png');
+      background-size: cover;
+    }
+
+    .babystar1 { left: 300px; top: 334px; }
+    .babystar2 { left: 71px; top: 334px; }
+    .babystar3 { left: 62px; top: 367px; }
+
+    .rectangle {
+      box-sizing: border-box;
+      position: absolute;
+      width: 234px;
+      height: 40px;
+      left: 83px;
+      top: 358px;
+      background: #FCBDC0;
+      border: 1px solid #9877A5;
+      border-radius: 20px;
+    }
+
+    /* Weather Description */
+   .description {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 367px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+  color: #000000;
+}
+
+    #background {
+      transition: background-image 0.4s ease;
+      background-size: cover;
+    }
+
+    /* Line 1 */
+    .line {
+      position: absolute;
+      width: 404px;
+      height: 0px;
+      left: -4px;
+      top: 52px;
+      background: #84688F;
+    }
+
+    .shrink-out {
+  animation: shrinkOut 0.2s ease forwards;
+}
+
+@keyframes shrinkOut {
+  to {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+}
+
+.frame1 {
+  transition: all 0.2s ease;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="frame1">
+    <div class="header">
+      <h1>Weather</h1>
+      <div class="unit f"><span>F°</span></div>
+      <div class="unit c"><span>C</span></div>
+    </div>
+    <div class="frame3" id="background">
+      <div class="star star2"></div>
+      <div class="star star3"></div>
+      <div class="star star4"></div>
+      <div class="star star5"></div>
+      <div class="big-star"></div>
+      <div class="temp" id="temperature">34°</div>
+      <div class="kiki-wrapper">
+      <img src="assets/kiki.gif" alt="Kiki Animation" class="kiki">
+      </div>
+      <div class="babystar babystar2"></div>
+      <div class="rectangle"></div>
+      <div class="babystar babystar1"></div>
+      <div class="babystar babystar3"></div>
+      <div class="description" id="condition">It’s very cloudy today</div>
+      <div class="line"></div>
+    </div>
+  </div>
+  <script src="javascript/homepage.js"></script>
+</body>
+</html>

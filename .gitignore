@@ -1,0 +1,31 @@
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# VS Code settings (optional)
+.vscode/
+
+# Logs
+*.log
+
+# Electron build/output folders (if using Electron to package)
+out/
+dist/
+release/
+*.asar
+*.exe
+*.dmg
+*.deb
+
+# Cache directories
+.cache/
+temp/
+tmp/
+
+# Node modules (only if you ever run npm/yarn)
+node_modules/
+
+# Optional: exclude high-res editable design files (keep final assets)
+*.psd
+*.xcf
+*.ai
