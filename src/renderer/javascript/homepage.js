@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const apiKey = "315a74069e75d77ac9cf3b368c6f9429";
-  const latitude = 8.4762;
-  const longitude = 76.9600;
+  const apiKey = //put ur api key;
+  const latitude = //ur desired latitude;
+  const longitude = //ur desired longitude;
 
   // Select buttons and main window
   const fButton = document.querySelector(".unit.f"); // F° = minimize
