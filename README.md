@@ -19,9 +19,9 @@ Features
 --------
 <div align="center">
 
-  <img src="https://github.com/user-attachments/assets/7af09baf-88cc-4084-8a80-9903bffae8b4" width="400" />
+  <img src="https://github.com/user-attachments/assets/7af09baf-88cc-4084-8a80-9903bffae8b4" width="200" />
 
-<img src="https://github.com/user-attachments/assets/52137997-cea7-43c4-9acb-d08e20967abc" width="400" />
+<img src="https://github.com/user-attachments/assets/52137997-cea7-43c4-9acb-d08e20967abc" width="200" />
 
 </div>
 
